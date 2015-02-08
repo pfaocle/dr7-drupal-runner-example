@@ -37,6 +37,10 @@ Pre:
     Commands:
         - vset site_mail "noreply@example.com"
 
+# Enable features.
+Features:
+    - dr7_example_feature
+
 # Post-steps.
 Post:
     Commands:

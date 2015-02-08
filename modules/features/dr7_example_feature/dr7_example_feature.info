@@ -1,0 +1,9 @@
+name = dr7_example_feature
+description = Example feature for testing Drupal Runner on dr7 site.
+core = 7.x
+package = dr7
+dependencies[] = features
+dependencies[] = filter
+features[features_api][] = api:2
+features[filter][] = plain_text
+project path = sites/dr7/modules/features
