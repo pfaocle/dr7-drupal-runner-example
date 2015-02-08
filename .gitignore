@@ -1,0 +1,8 @@
+# .gitignore for a standard Drupal 7 build based in the sites subdirectory.
+
+# Composer-installed build dependencies.
+vendor
+
+# Drupal
+files
+settings.php

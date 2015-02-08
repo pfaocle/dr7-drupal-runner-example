@@ -1,0 +1,31 @@
+#
+# Example build configuration for a vanilla Drupal 7 site.
+#
+# @see https://github.com/pfaocle/d7-drupal-runner-example/blob/master/README.md
+#
+
+#
+# Configuration for this build.
+#
+
+# Build details - Git, remotes, Drush, make file etc.
+Build:
+    git: https://github.com/pfaocle/dr7-drupal-runner-example.git
+    drush-alias: @dr7.local
+    profile: minimal
+    sites-subdir: dr7
+    make: dr7.make
+    sites:
+        - 8080.dr7.drupal.dev
+
+# Site details - name and root user credentials.
+Site:
+    name: Drupal 7
+    rootuser: root
+    rootpassword: root
+
+# Database details.
+Database:
+    name: dr7
+    user: root
+    password: root
