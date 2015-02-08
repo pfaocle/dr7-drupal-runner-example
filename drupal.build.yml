@@ -29,3 +29,15 @@ Database:
     name: dr7
     user: root
     password: root
+
+# Pre-steps.
+Pre:
+    Modules:
+        - features
+    Commands:
+        - vset site_mail "noreply@example.com"
+
+# Post-steps.
+Post:
+    Commands:
+        - sqlq "UPDATE block SET status = 1, region = 'sidebar_first' WHERE module = 'user'"

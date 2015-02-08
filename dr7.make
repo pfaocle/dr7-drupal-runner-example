@@ -2,3 +2,6 @@
 api = 2
 core = 7.x
 projects[drupal] = 7.34
+
+; Contrib
+projects[features] = 2.0
