@@ -7,7 +7,7 @@ Minimal vanilla [Drupal](https://www.drupal.org/) 7 build set-up for testing Dru
 ## Usage
 
     cd /path/to/your/webroot/dr7.drupal.dev
-    ln -s /path/to/this/repo/examples/dr7-drupal-runner-example sites/dr7
+    git clone git@github.com:pfaocle/dr7-drupal-runner-example.git sites/dr7
     cd sites/dr7
     composer install
 
