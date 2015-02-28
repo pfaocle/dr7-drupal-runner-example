@@ -4,7 +4,7 @@ core = 7.x
 projects[drupal] = 7.34
 
 ; Contrib
-projects[features] = 2.0
+projects[features] = 2.3
 projects[migrate] = 2.7
 projects[migrate_d2d] = 2.1
 projects[migrate_extras] = 2.5
