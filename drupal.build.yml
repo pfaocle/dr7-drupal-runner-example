@@ -7,8 +7,6 @@
 #
 # Configuration for this build.
 #
-
-# Build details - Git, remotes, Drush, make file etc.
 build:
     git: "https://github.com/pfaocle/dr7-drupal-runner-example.git"
     drush_alias: "@dr7.local"
