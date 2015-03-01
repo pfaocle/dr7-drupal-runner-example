@@ -9,39 +9,64 @@
 #
 
 # Build details - Git, remotes, Drush, make file etc.
-Build:
-    git: https://github.com/pfaocle/dr7-drupal-runner-example.git
-    drush-alias: @dr7.local
+build:
+    git: "https://github.com/pfaocle/dr7-drupal-runner-example.git"
+    drush_alias: "@dr7.local"
     profile: minimal
-    sites-subdir: dr7
+#    install_db: dr7.sql
+    sites_subdir: dr7
     make: dr7.make
+    make_path: sites/dr7
     sites:
         - 8080.dr7.drupal.dev
+        - dr7.stage.example.com
+        - dr7.prod.example.com
 
-# Site details - name and root user credentials.
-Site:
-    name: Drupal 7
-    rootuser: root
-    rootpassword: root
+    # Site details - name and root user credentials.
+    site:
+        site_name: Drupal 7
+        root_username: root
+        root_password: root
+        theme: bootstrap_dr7
 
-# Database details.
-Database:
-    name: dr7
-    user: root
-    password: root
+    # Database details.
+    database:
+        db_name: dr7
+        db_username: root
+        db_password: root
 
-# Pre-steps.
-Pre:
-    Modules:
-        - features
-    Commands:
-        - vset site_mail "noreply@example.com"
+    # Pre-steps.
+    pre:
+        modules:
+            - features
+        commands:
+            - vset site_mail "noreply@example.com"
 
-# Enable features.
-Features:
-    - dr7_example_feature
+    # Enable features.
+    features:
+        - dr7_example_feature
 
-# Post-steps.
-Post:
-    Commands:
-        - sqlq "UPDATE block SET status = 1, region = 'sidebar_first' WHERE module = 'user'"
+    # Migration.
+    migrate:
+        # Note we assume that Migrate and Migrate UI are required.
+        dependencies:
+            - migrate_d2d
+            - migrate_extras
+            - migrate_example
+            - migrate_dr7                                               # Your custom migration module/classes.
+        source:
+            files:
+                variable: dr7_file_migration                            # File migrations can use this to set source files path.
+                dir: /var/www/vhosts/dr7-old.drupal.dev/files           # Provide the path to the source files folder.
+        groups:                                                         # We can migrate groups, in order...
+            - wine
+        migrations:                                                     # ... and/or also run individual migrations, in order.
+            - BeerTerm
+            - BeerUser
+            - BeerNode
+            - BeerComment
+
+    # Post-steps.
+    post:
+        commands:
+            - sqlq "UPDATE block SET status = 1, region = 'sidebar_first' WHERE module = 'user'"
