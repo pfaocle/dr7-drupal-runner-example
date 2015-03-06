@@ -13,8 +13,9 @@ build:
     profile: minimal
 #    install_db: dr7.sql
     sites_subdir: dr7
-    make: dr7.make
-    make_path: sites/dr7
+    make:
+        file: dr7.make
+        path: sites/dr7
     sites:
         - 8080.dr7.drupal.dev
         - dr7.stage.example.com
