@@ -11,5 +11,9 @@
 
   "require": {
     "pfaocle/drupal-runner": "dev-master"
+  },
+
+  "require-dev": {
+    "codeception/codeception": "~2.0.10"
   }
 }
