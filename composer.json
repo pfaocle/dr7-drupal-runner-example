@@ -10,7 +10,7 @@
   ],
 
   "require": {
-    "pfaocle/drupal-runner": "dev-master"
+    "pfaocle/drupal-runner": "dev-develop"
   },
 
   "require-dev": {
