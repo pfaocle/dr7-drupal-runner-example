@@ -36,10 +36,8 @@ build:
 
     # Pre-steps.
     pre:
-        modules:
-            - features
-        commands:
-            - vset site_mail "noreply@example.com"
+        - en features
+        - vset site_mail "noreply@example.com"
 
     # Enable features.
     features:
@@ -67,5 +65,4 @@ build:
 
     # Post-steps.
     post:
-        commands:
-            - sqlq "UPDATE block SET status = 1, region = 'sidebar_first' WHERE module = 'user'"
+        - sqlq "UPDATE block SET status = 1, region = 'sidebar_first' WHERE module = 'user'"
