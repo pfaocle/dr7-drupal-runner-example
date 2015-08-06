@@ -1,6 +1,9 @@
 #
 # Example build configuration for a vanilla Drupal 7 site.
 #
+# To be used for testing Drupal Runner.
+#
+# @see https://bitbucket.org/pfaocle/drupal-runner
 # @see https://github.com/pfaocle/d7-drupal-runner-example/blob/master/README.md
 #
 
