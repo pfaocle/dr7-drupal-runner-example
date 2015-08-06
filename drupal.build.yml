@@ -12,7 +12,7 @@
 #
 build:
     git: "https://github.com/pfaocle/dr7-drupal-runner-example.git"
-    drush_alias: "@dr7.local"
+    drush_alias: "@dr7.druphpet"
     profile: minimal
 #    install_db: dr7.sql
     sites_subdir: dr7
@@ -20,7 +20,7 @@ build:
         file: dr7.make
         path: sites/dr7
     sites:
-        - 8080.dr7.drupal.dev
+        - dr7.druphpet.dev
         - dr7.stage.example.com
         - dr7.prod.example.com
 
@@ -34,8 +34,8 @@ build:
     # Database details.
     database:
         db_name: dr7
-        db_username: root
-        db_password: root
+        db_username: druphpet
+        db_password: druphpet
 
     # Pre-steps.
     pre:
