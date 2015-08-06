@@ -4,6 +4,15 @@ dr7-drupal-runner-example
 Minimal vanilla [Drupal](https://www.drupal.org/) 7 build set-up for testing Drupal Runner.
 
 
+## Setup
+
+By default this build configuration will install to a local vhost named
+**dr7.druphpet.dev** provided by [Druphpet](https://github.com/alehkot/druphpet),
+using the **@dr7.druphpet** Drush alias.
+
+Both of these will need to be functioning before building this site
+with Drupal Runner.
+
 ## Usage
 
     cd /path/to/your/webroot/dr7.drupal.dev
